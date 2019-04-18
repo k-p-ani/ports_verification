@@ -1,0 +1,21 @@
+- name: closing all server ports
+  shell: |
+      ps -A | grep 'InfraCheckServer' | awk '{print $1}'  | while read line; do
+      echo $line
+      #sudo kill -15 $lin
+      done
+
+
+- name: closing all server ports
+  shell: |
+      ps -A | grep 'InfraCheckClient' | awk '{print $1}'  | while read line; do
+      echo $line
+      #sudo kill -15 $lin
+      done
+
+
+- name: deleting directory
+  file:
+    path: /infra_check_tmp
+    state: absent
+   

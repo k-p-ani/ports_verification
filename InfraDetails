@@ -1,0 +1,20 @@
+details:
+#for traffic from compute node to master node
+- serverIP: 1,2           # IP address of all master nodes comma delimited which will listen at given ports using given protocol
+  clientIP: 3,4            # IP address of all compute nodes comma delimited which will connect at given ports using given protocol
+  protocol: tcp
+  ports: 8084,8085        # list of ports comma delimited on which server will listen and client will connect using required protocol
+- serverIP: 1,2           # IP address of all master nodes comma delimited which will listen at given ports using given protocol
+  clientIP: 3,4           # IP address of all compute nodes comma delimited which will connect at given ports using given protocol
+  protocol: udp
+  ports: 53,8053
+
+#for traffic from master node to compute node
+- serverIP: 5,6          # IP address of all compute nodes comma delimited which will listen at given ports using given protocol
+  clientIP: 7,8          # IP address of all master nodes comma delimited which will connect at given ports using given protocol
+  protocol: tcp
+  ports: 8084,8085
+- serverIP: 5,6          # IP address of all compute nodes comma delimited which will listen at given ports using given protocol
+  clientIP: 7,8          # IP address of all master nodes comma delimited which will connect at given ports using given protocol
+  protocol: udp
+  ports: 53,8053

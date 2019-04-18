@@ -1,0 +1,8 @@
+#Node-Port-Details:
+Compute-To-Master:
+  protocol: tcp
+    ports: 8084
+    master-ip-address: 172.32.125.193
+  protocol: udp
+    ports: 8085
+    master-ip-address: 172.32.125.193

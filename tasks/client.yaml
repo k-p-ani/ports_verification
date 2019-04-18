@@ -1,0 +1,24 @@
+---
+# tasks file for app
+
+
+- name: ansible create directory example
+  file:
+    path: /infra_check_tmp
+    state: directory
+
+
+- name: Transfer the script
+  copy: src=files/InfraCheckClient.py  dest=/infra_check_tmp  mode=0777
+
+- name: Checking Port Connectivity
+  shell:  python /infra_check_tmp/InfraCheckClient.py {{ports}} {{protocol}} {{server}} {{client}} &
+  register: output
+  failed_when: output.stderr | length > 0 
+
+- debug:
+    msg: "{{output}}"
+  when: output.stderr | length == 0 
+
+
+

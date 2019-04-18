@@ -1,0 +1,9 @@
+port_definitions:
+- from_group: nodes
+  to_group: nodes
+  type: udp
+  port: 4789
+- from_group: nodes
+  to_group: masters
+  type: udp
+  port: 8053

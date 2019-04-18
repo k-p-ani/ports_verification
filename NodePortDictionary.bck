@@ -1,0 +1,63 @@
+Compute-To-Master:
+  tcp:
+    ports:
+    master-ip-address:
+  udp:
+    ports:
+    master-ip-address:
+Master-To-Compute:
+  tcp:
+    ports:
+    compute-ip-address:
+  udp:
+    ports:
+    compute-ip-address:
+Infra-To-Master:
+  tcp:
+    ports:
+    master-ip-address:
+  udp:
+    ports:
+    master-ip-address:
+Master-To-Infra:
+  tcp:
+    ports:
+    infra-ip-address:
+  udp:
+    ports:
+    infra-ip-address:
+Infra-To-Compute:
+  tcp:
+    ports:
+    compute-ip-address:
+  udp:
+    ports:
+    compute-ip-address:
+Compute-To-Infra:
+  tcp:
+    ports:
+    infra-ip-address:
+  udp:
+    ports:
+    infra-ip-address:
+Master-To-Master:
+  tcp:
+    ports:
+    master-ip-address:
+  udp:
+    ports:
+    master-ip-address:
+Compute-To-Compute:
+  tcp:
+    ports:
+    compute-ip-address:
+  udp:
+    ports:
+    compute-ip-address:
+Infra-To-Infra:
+  tcp:
+    ports:
+    infra-ip-address:
+  udp:
+    ports:
+    infra-ip-address:

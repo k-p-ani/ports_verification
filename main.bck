@@ -1,0 +1,25 @@
+---
+- name: Starting listener server on master nodes
+  hosts: master-nodes
+  become: true
+  gather_facts: false
+  vars_files: 
+  - NodePortDictionary.yaml
+  tasks:
+  - name: print var
+    debug: 
+      var: NodePortDictionary
+  - debug: 
+      msg: {{Node-Port-Details}}
+#  tasks: 
+#    - include: task/server.yaml
+
+#  - name: Defining fact initialization
+#    include_tasks: "tasks/init_phases.yaml port_definition={{item_port}}"
+#    with_items: "{{port_definitions}}"
+#    loop_control:
+#      loop_var: item_port
+#    run_once: true
+
+
+

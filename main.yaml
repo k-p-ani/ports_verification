@@ -1,0 +1,26 @@
+---
+- name: Start all server ports
+  hosts: localhost
+  become: yes
+  vars_files: 
+  - InfraDetails
+  tasks:
+  - include: tasks/server.yaml server={{item.serverIP}} protocol={{item.protocol}} ports={{item.ports}}
+    with_items: "{{details}}"
+
+- name: Connect all clients to their server
+  hosts: localhost
+  become: yes
+  vars_files:
+  - InfraDetails
+  tasks:
+  - include: tasks/client.yaml server={{item.serverIP}} client={{item.clientIP}} protocol={{item.protocol}} ports={{item.ports}}
+    with_items: "{{details}}"
+
+
+
+- name: CleanUP environement
+  hosts: localhost
+  become: yes
+  tasks:
+  - include: tasks/cleanup.yaml

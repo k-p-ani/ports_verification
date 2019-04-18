@@ -1,0 +1,11 @@
+
+
+ps -A | grep 'InfraCheckClient' | awk '{print $1}' | while read line; do
+ #echo $line
+ sudo kill -15 $line
+done
+
+ps -A | grep 'InfraCheckServer' | awk '{print $1}' | while read line; do
+ #echo $line
+ sudo kill -15 $line
+done
